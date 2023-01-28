@@ -1,0 +1,42 @@
+﻿@model TeamMemberUpdateDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <h1>Edit</h1>
+
+        <h4>TeamMember</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text text-danger"></div>
+                            <input type="hidden" asp-for="@Model.teamMemberGetDto.Id" />
+                            <div class="form-group">
+                                <label asp-for="@Model.teamMemberPostDto.Name"></label>
+                                <input type="text" class="form-control" asp-for="@Model.teamMemberPostDto.Name" value="@Model.teamMemberGetDto.Name">
+                                <span asp-validation-for="@Model.teamMemberPostDto.Name" class="text text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.teamMemberPostDto.Position"></label>
+                                <input type="text" class="form-control" asp-for="@Model.teamMemberPostDto.Position" value="@Model.teamMemberGetDto.Position">
+                                <span asp-validation-for="@Model.teamMemberPostDto.Position" class="text text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.teamMemberPostDto.FormFile"></label>
+                                <input type="file" class="form-control" asp-for="@Model.teamMemberPostDto.FormFile" value="@Model.teamMemberGetDto.ImageName">
+                                <span asp-validation-for="@Model.teamMemberPostDto.FormFile" class="text text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button asp-action="Index" class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model SettingUpdateDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <h1>Edit</h1>
+
+        <h4>Setting</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="@Model.settingGetDto.Id" />
+                            <div class="form-group">
+                                <label asp-for="@Model.settingPostDto.Information"></label>
+                                <input type="text" class="form-control" asp-for="@Model.settingPostDto.Information" value="@Model.settingGetDto.Information">
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.settingPostDto.PhoneNumber"></label>
+                                <input type="text" class="form-control" asp-for="@Model.settingPostDto.PhoneNumber" value="@Model.settingGetDto.PhoneNumber">
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.settingPostDto.Email"></label>
+                                <input type="text" class="form-control" asp-for="@Model.settingPostDto.Email" value="@Model.settingGetDto.Email">
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.settingPostDto.WorkingHour"></label>
+                                <input type="text" class="form-control" asp-for="@Model.settingPostDto.WorkingHour" value="@Model.settingGetDto.WorkingHour">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button asp-action="Index" class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
